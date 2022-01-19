@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Person} from "../../models/person";
 import {PersonService} from "../../services/person.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-person',
@@ -10,7 +11,7 @@ import {PersonService} from "../../services/person.service";
 export class ListPersonComponent implements OnInit {
   people!: Person[]
 
-  constructor(private personService: PersonService) {
+  constructor(private personService: PersonService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -26,10 +27,14 @@ export class ListPersonComponent implements OnInit {
   deletePerson(id) {
     if (confirm("Really want delete?")) {
       this.personService.delete(id).subscribe(() => {
-        alert("Success")
         this.ngOnInit()
+        // @ts-ignore
+        document.getElementById("alo").innerHTML = "Delete successful!"
+        setTimeout(() => {
+          // @ts-ignore
+          document.getElementById("alo").innerHTML = ""
+        }, 2000)
       })
     }
   }
-
 }

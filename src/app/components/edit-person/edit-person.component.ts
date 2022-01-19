@@ -4,6 +4,8 @@ import {Person} from "../../models/person";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
+const url = "/"
+
 @Component({
   selector: 'app-edit-person',
   templateUrl: './edit-person.component.html',
@@ -53,14 +55,19 @@ export class EditPersonComponent implements OnInit {
     // @ts-ignore
     this.personService.update(this.person.id, person).subscribe(() => {
       alert("Success")
-      this.router.navigate(["/"])
-
+      this.router.navigateByUrl(url).then(r => {
+        if (r) {
+          console.log("Navigation is successful!");
+        } else {
+          console.log("Navigation has failed!");
+        }
+      })
     })
   }
 
   delete(): void {
     this.personService.delete(this.person.id).subscribe(() => {
-      alert("Success")
+      this.router.navigateByUrl(url)
     })
   }
 }

@@ -3,6 +3,8 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {PersonService} from "../../services/person.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
+const url = "/"
+
 @Component({
   selector: 'app-create-person',
   templateUrl: './create-person.component.html',
@@ -21,15 +23,32 @@ export class CreatePersonComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   submit() {
     const person = this.personForm.value
     console.log(person)
     // @ts-ignore
-    this.personService.save(person).subscribe(() => {
-      alert("Success")
-      this.router.navigate(["/"])
+    this.personService.save(person).subscribe((r) => {
+      console.log(r)
+      this.router.navigateByUrl(url)
+      this.notify1()
+      this.notify2()
     })
+  }
+
+  notify1() {
+    setTimeout(() => {
+      // @ts-ignore
+      document.getElementById("alo").innerHTML = "Create successful!"
+    }, 0)
+  }
+
+  notify2() {
+    setTimeout(() => {
+      // @ts-ignore
+      document.getElementById("alo").innerHTML = " "
+    }, 2000)
   }
 }

@@ -1,16 +1,20 @@
 <div class="container">
   <div class="row">
-
-    <div class="col offset-1">
-    </div>
-    <div class="col-3">
-      <button class="btn btn-primary"><a style="text-decoration: none; color: purple" routerLink="/create">Create</a></button>
+    <div class="col-6">
+      <button class="btn btn-primary"><a style="text-decoration: none; color: purple" routerLink="/create">Create</a>
+      </button>
+      <button class="btn btn-primary"><a style="text-decoration: none; color: purple" routerLink="/">List</a>
+      </button>
     </div>
     <div class="col-6">
+      <router-outlet></router-outlet>
       <div>
-        <router-outlet></router-outlet>
       </div>
     </div>
-
   </div>
 </div>
+
+
+
+
+

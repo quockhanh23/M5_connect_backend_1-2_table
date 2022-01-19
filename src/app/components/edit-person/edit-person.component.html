@@ -1,5 +1,5 @@
-<p>edit-person works!</p>
 <h1>Edit form</h1>
+<button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
 <form [formGroup]="personForm" (ngSubmit)="edit()">
   <table>
     <tr>
@@ -15,8 +15,14 @@
       <td><input type="text" formControlName="address" [value]="person.address"></td>
     </tr>
   </table>
-  <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
-  <button (click)="delete()" style="color: #0a70b9" class="btn-warning btn">Delete</button>
-  <button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
+  <div class="row">
+    <div class="col-6">
+      <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
+    </div>
+    <div class="col-6">
+      <button (click)="delete()" style="color: #0a70b9" class="btn-warning btn">Delete</button>
+    </div>
+  </div>
 </form>
+
 

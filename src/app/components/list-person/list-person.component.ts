@@ -21,9 +21,10 @@ export class ListPersonComponent implements OnInit {
       console.log(error)
     })
   }
+
   // @ts-ignore
   deletePerson(id) {
-    if (confirm("Really want?")) {
+    if (confirm("Really want delete?")) {
       this.personService.delete(id).subscribe(() => {
         alert("Success")
         this.ngOnInit()

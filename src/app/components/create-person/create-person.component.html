@@ -1,3 +1,5 @@
+<button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
+
 <form [formGroup]="personForm" (ngSubmit)="submit()">
   <table>
     <tr>
@@ -13,6 +15,6 @@
       <td><input type="text" formControlName="address"></td>
     </tr>
   </table>
-  <button class="btn btn-warning">Create</button>
-  <button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
+  <button class="btn btn-warning">Submit</button>
 </form>
+

@@ -3,12 +3,15 @@
     <tr>
       <th>Name</th>
       <th>Address</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
     <tr *ngFor="let pe of people">
       <td>{{pe.name}}</td>
       <td>{{pe.address}}</td>
       <td>
-        <button class="btn-warning btn"><a style="text-decoration: none" [routerLink]="['/edit', pe.id]">edit</a></button>
+        <button class="btn-warning btn"><a style="text-decoration: none" [routerLink]="['/edit', pe.id]">edit</a>
+        </button>
       </td>
       <td>
         <button class="btn-warning btn"><a (click)="deletePerson(pe.id)">Delete</a></button>

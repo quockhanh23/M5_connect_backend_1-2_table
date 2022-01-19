@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PersonService} from "../../services/person.service";
 import {Person} from "../../models/person";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
@@ -14,6 +14,7 @@ export class EditPersonComponent implements OnInit {
 
   constructor(private personService: PersonService,
               private activateRoute: ActivatedRoute,
+              private router: Router,
               private fb: FormBuilder) {
   }
 
@@ -52,6 +53,8 @@ export class EditPersonComponent implements OnInit {
     // @ts-ignore
     this.personService.update(this.person.id, person).subscribe(() => {
       alert("Success")
+      this.router.navigate(["/"])
+
     })
   }
 

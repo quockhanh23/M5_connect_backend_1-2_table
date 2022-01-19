@@ -15,18 +15,20 @@ export class CreatePersonComponent implements OnInit {
     address: new FormControl(),
   });
 
-  constructor(private personService: PersonService,
-              private activateRoute: ActivatedRoute,) {
+  constructor(private personService: PersonService) {
   }
 
   ngOnInit(): void {
   }
 
   submit() {
-    const person = this.personForm.value
+    const person = {
+      name: this.personForm.value.name,
+      address: this.personForm.value.address,
+    }
     console.log(person)
     // @ts-ignore
-    this.personService.save(this.personForm).subscribe.subscribe(() => {
+    this.personService.save(person).subscribe(() => {
       alert("Success")
     })
   }

@@ -14,14 +14,9 @@
       <td>Address:</td>
       <td><input type="text" formControlName="address" [value]="person.address"></td>
     </tr>
-    <tr>
-      <td>
-        <button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a>
-        </button>
-        <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
-
-      <td>
-    </tr>
   </table>
+  <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
+  <button (click)="delete()" style="color: #0a70b9" class="btn-warning btn">Delete</button>
+  <button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
 </form>
-<button (click)="delete()" style="color: #0a70b9" class="btn-warning btn">Delete</button>
+

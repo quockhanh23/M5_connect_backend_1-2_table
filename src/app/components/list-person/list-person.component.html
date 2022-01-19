@@ -1,1 +1,18 @@
-<p>list-person works!</p>
+<div>
+  <table style="color: purple" border="1px">
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+    </tr>
+    <tr *ngFor="let pe of people">
+      <td>{{pe.name}}</td>
+      <td>{{pe.address}}</td>
+      <td>
+        <button class="btn-warning btn"><a style="text-decoration: none" [routerLink]="['/edit', pe.id]">edit</a></button>
+      </td>
+      <td>
+        <button class="btn-warning btn"><a (click)="deletePerson(pe.id)">Delete</a></button>
+      </td>
+    </tr>
+  </table>
+</div>

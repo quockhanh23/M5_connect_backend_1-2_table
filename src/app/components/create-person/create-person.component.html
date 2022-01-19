@@ -1,10 +1,8 @@
-<p>product-create works!</p>
-
 <form [formGroup]="personForm" (ngSubmit)="submit()">
   <table>
     <tr>
       <td>ID:</td>
-      <td><input type="text" formControlName="id"></td>
+      <td><input type="hidden" formControlName="id"></td>
     </tr>
     <tr>
       <td>Name:</td>
@@ -14,12 +12,7 @@
       <td>Address:</td>
       <td><input type="text" formControlName="address"></td>
     </tr>
-
-    <tr>
-      <td></td>
-      <td>
-        <button class="btn btn-warning">Tạo mới</button>
-      </td>
-    </tr>
   </table>
+  <button class="btn btn-warning">Create</button>
+  <button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
 </form>

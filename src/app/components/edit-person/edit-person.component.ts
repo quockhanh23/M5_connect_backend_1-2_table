@@ -24,6 +24,7 @@ export class EditPersonComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.getAll();
     this.activateRoute.paramMap.subscribe(paramap => {
       const id = paramap.get('id');
       console.log(id)
@@ -38,6 +39,11 @@ export class EditPersonComponent implements OnInit {
       name: '',
       address: ''
     }
+  }
+
+  getAll() {
+    // @ts-ignore
+    this.person = this.personService.getAll();
   }
 
   edit(): any {

@@ -1,0 +1,27 @@
+<p>edit-person works!</p>
+<h1>Edit form</h1>
+<form [formGroup]="personForm" (ngSubmit)="edit()">
+  <table>
+    <tr>
+      <td>ID:</td>
+      <td>{{person.id}} <input type="hidden" formControlName="id" [value]="person.id"></td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name" [value]="person.name"></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><input type="text" formControlName="address" [value]="person.address"></td>
+    </tr>
+    <tr>
+      <td>
+        <button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a>
+        </button>
+        <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
+
+      <td>
+    </tr>
+  </table>
+</form>
+<button (click)="delete()" style="color: #0a70b9" class="btn-warning btn">Delete</button>

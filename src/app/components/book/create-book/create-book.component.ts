@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {BookService} from "../../../services/book.service";
 import {Author} from "../../../models/author";
 import {AuthorService} from "../../../services/author.service";
+import {PersonService} from "../../../services/person.service";
 
 @Component({
   selector: 'app-create-book',
@@ -24,7 +25,8 @@ export class CreateBookComponent implements OnInit {
   constructor(private router: Router,
               private fb: FormBuilder,
               private bookService: BookService,
-              private authorService: AuthorService) {
+              private authorService: AuthorService,
+              private personService: PersonService) {
   }
 
   ngOnInit(): void {
@@ -44,6 +46,8 @@ export class CreateBookComponent implements OnInit {
     }
     this.bookService.save(book).subscribe(() => {
       this.router.navigate(["/book"]);
+      this.personService.notify1()
+      this.personService.notify2()
     })
   }
 }

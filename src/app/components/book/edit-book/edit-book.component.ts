@@ -29,7 +29,7 @@ export class EditBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bookService.getAll().subscribe(rs => {
+    this.authorService.getAll().subscribe(rs => {
       this.author = rs
       console.log(rs)
     });
@@ -46,7 +46,7 @@ export class EditBookComponent implements OnInit {
     })
   }
 
-  update() {
+  updateBook() {
     const book = {
       name: this.bookForm.value.name,
       price: this.bookForm.value.price,
@@ -56,8 +56,7 @@ export class EditBookComponent implements OnInit {
     }
     console.log(book);
     // @ts-ignore
-    this.bookService.updatePost(this.book.id, book).subscribe(() => {
-      alert("Thành công!")
+    this.bookService.update(this.book.id, book).subscribe(() => {
       this.router.navigate(["/book"]);
     })
   }

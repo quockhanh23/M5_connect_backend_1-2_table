@@ -16,10 +16,10 @@ export class CreateBookComponent implements OnInit {
   author!: Author[]
 
   bookForm: FormGroup = this.fb.group({
-    id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
-    author_id: new FormControl(),
+    id: new FormControl(''),
+    name: new FormControl(''),
+    price: new FormControl(''),
+    author_id: new FormControl(''),
   });
 
   constructor(private router: Router,

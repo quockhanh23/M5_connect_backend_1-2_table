@@ -2,8 +2,6 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Book} from "../models/book";
-import {Person} from "../models/person";
-
 const API_URL = 'http://localhost:8080/api/books';
 
 @Injectable({

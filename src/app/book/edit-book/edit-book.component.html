@@ -1,5 +1,4 @@
-
-
+<h2 style="color: #0a70b9">Edit form</h2>
 <form [formGroup]="bookForm" (ngSubmit)="updateBook()">
   <table>
     <tr>
@@ -17,7 +16,7 @@
     <tr>
       <td>
         <select formControlName="author">
-          <option >{{book?.author?.name}} </option>
+          <option>{{book?.author?.name}} </option>
           <option *ngFor="let a of author" value="{{a.id}}">{{a.name}}</option>
         </select>
       </td>
@@ -27,10 +26,6 @@
     <div class="col-6">
       <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
     </div>
-    <div class="col-6">
-
-    </div>
   </div>
-
 </form>
 

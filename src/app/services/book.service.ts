@@ -25,12 +25,14 @@ export class BookService {
     return this.httpClient.get<Book>(API_URL + `/${id}`)
   }
 
-  update(id: string, book: Book): Observable<Book> {
+  update(id: any, book: Book): Observable<Book> {
     return this.httpClient.put<Book>(API_URL + `/${id}`, book)
   }
 
   delete(id: any): Observable<Book> {
     return this.httpClient.delete<Book>(API_URL + `/${id}`)
   }
-
+  delete2(id: any) {
+    return this.httpClient.delete<Book>(`${API_URL}/${id}`);
+  }
 }

@@ -1,19 +1,22 @@
 <div>
-  <table style="color: purple" border="1px">
+  <table style="color: purple" border="1px" width="100%">
     <tr>
+      <th>Number</th>
       <th>Name</th>
       <th>Price</th>
       <th>Author</th>
-
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
-    <tr *ngFor="let pe of book">
+    <tr *ngFor="let pe of book index as i">
+      <td>{{i + 1}}</td>
       <td>{{pe.name}}</td>
       <td>{{pe.price}}</td>
       <td>
        {{pe.author?.name}}
       </td>
       <td>
-        <button class="btn-warning btn"><a style="text-decoration: none" [routerLink]="['/book/edit', pe.id]">edit</a>
+        <button class="btn-warning btn"><a style="text-decoration: none" [routerLink]="['/book/edit', pe.id]">Edit</a>
         </button>
       </td>
       <td>

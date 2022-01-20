@@ -33,6 +33,12 @@ export class EditPersonComponent implements OnInit {
       console.log(id)
       this.personService.getById(id).subscribe(result => {
         this.person = result
+        this.personForm = new FormGroup({
+          id: new FormControl(result.id),
+          name: new FormControl(result.name),
+          address: new FormControl(result.address),
+
+        });
         console.log(result)
       }, error => {
         console.log(error)
@@ -54,7 +60,6 @@ export class EditPersonComponent implements OnInit {
     console.log(person)
     // @ts-ignore
     this.personService.update(this.person.id, person).subscribe(() => {
-      alert("Success")
       this.router.navigateByUrl(url).then(r => {
         if (r) {
           console.log("Navigation is successful!");
@@ -62,12 +67,16 @@ export class EditPersonComponent implements OnInit {
           console.log("Navigation has failed!");
         }
       })
+      this.personService.notify1()
+      this.personService.notify2()
     })
   }
 
   delete(): void {
     this.personService.delete(this.person.id).subscribe(() => {
       this.router.navigateByUrl(url)
+      this.personService.notify1()
+      this.personService.notify2()
     })
   }
 }

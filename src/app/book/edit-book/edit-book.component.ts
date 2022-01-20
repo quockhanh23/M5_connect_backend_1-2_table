@@ -64,7 +64,7 @@ export class EditBookComponent implements OnInit {
     console.log(book);
     // @ts-ignore
     this.bookService.update(this.bookForm.value.id, book).subscribe(() => {
-      this.router.navigate(["/book"]);
+      this.router.navigate(["/book/list"]);
       this.personService.notify1()
       this.personService.notify2()
     })

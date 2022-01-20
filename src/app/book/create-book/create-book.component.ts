@@ -45,7 +45,7 @@ export class CreateBookComponent implements OnInit {
       }
     }
     this.bookService.save(book).subscribe(() => {
-      this.router.navigate(["/book"]);
+      this.router.navigate(["/book/list"]);
       this.personService.notify1()
       this.personService.notify2()
     })

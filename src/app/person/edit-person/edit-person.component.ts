@@ -4,7 +4,7 @@ import {Person} from "../../models/person";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
-const url = "/"
+const url = "/person/list"
 
 @Component({
   selector: 'app-edit-person',

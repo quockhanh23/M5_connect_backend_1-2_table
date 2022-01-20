@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {PersonService} from "../../services/person.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
-const url = "/"
+const url = "/person/list"
 
 @Component({
   selector: 'app-create-person',

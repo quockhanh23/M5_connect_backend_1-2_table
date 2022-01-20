@@ -3,10 +3,7 @@ import {Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {BookService} from "../../../services/book.service";
 import {Author} from "../../../models/author";
-import {Book} from "../../../models/book";
 import {AuthorService} from "../../../services/author.service";
-
-const url = "/"
 
 @Component({
   selector: 'app-create-book',
@@ -46,8 +43,7 @@ export class CreateBookComponent implements OnInit {
       }
     }
     this.bookService.save(book).subscribe(() => {
-      alert("thêm thành công")
-      this.router.navigateByUrl(url)
+      this.router.navigate(["/book"]);
     })
   }
 }

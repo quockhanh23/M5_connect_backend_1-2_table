@@ -1,1 +1,36 @@
-<p>edit-book works!</p>
+
+
+<form [formGroup]="bookForm" (ngSubmit)="update()">
+  <table>
+    <tr>
+      <td>ID:</td>
+      <td><input type="hidden" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><input type="text" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>
+        <select formControlName="author_id">
+          <option disabled>Selected</option>
+          <option *ngFor="let a of author" value="{{a.id}}">{{a.name}}
+        </select>
+      </td>
+    </tr>
+  </table>
+  <div class="row">
+    <div class="col-6">
+      <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
+    </div>
+    <div class="col-6">
+
+    </div>
+  </div>
+
+</form>
+

@@ -12,6 +12,13 @@
       <td>
        {{pe.author?.name}}
       </td>
+      <td>
+        <button class="btn-warning btn"><a style="text-decoration: none" [routerLink]="['/bookEdit', pe.id]">edit</a>
+        </button>
+      </td>
+      <td>
+<!--        <button class="btn-warning btn"><a (click)="deletePerson(pe.id)">Delete</a></button>-->
+      </td>
     </tr>
   </table>
 </div>

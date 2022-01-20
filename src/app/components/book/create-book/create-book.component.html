@@ -1,0 +1,28 @@
+<button class="btn-warning btn"><a style="text-decoration: none" routerLink="/">Back</a></button>
+
+<form [formGroup]="bookForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>ID:</td>
+      <td><input type="hidden" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Price:</td>
+      <td><input type="text" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>
+        <select formControlName="author_id">
+          <option disabled>Selected</option>
+          <option *ngFor="let a of author" value="{{a.id}}">{{a.name}}
+        </select>
+      </td>
+    </tr>
+  </table>
+  <button class="btn btn-warning">Submit</button>
+</form>
+

@@ -33,4 +33,17 @@ export class PersonService {
   save(person: Person): Observable<Person> {
     return this.httpClient.post<Person>(API_URL, person)
   }
+  notify1() {
+    setTimeout(() => {
+      // @ts-ignore
+      document.getElementById("alo").innerHTML = "Create successful!"
+    }, 0)
+  }
+
+  notify2() {
+    setTimeout(() => {
+      // @ts-ignore
+      document.getElementById("alo").innerHTML = " "
+    }, 2000)
+  }
 }

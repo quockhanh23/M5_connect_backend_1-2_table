@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Person} from "../../models/person";
-import {PersonService} from "../../services/person.service";
+import {Person} from "../../../models/person";
+import {PersonService} from "../../../services/person.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -30,10 +30,7 @@ export class ListPersonComponent implements OnInit {
         this.ngOnInit()
         // @ts-ignore
         document.getElementById("alo").innerHTML = "Delete successful!"
-        setTimeout(() => {
-          // @ts-ignore
-          document.getElementById("alo").innerHTML = ""
-        }, 2000)
+        this.personService.notify2()
       })
     }
   }

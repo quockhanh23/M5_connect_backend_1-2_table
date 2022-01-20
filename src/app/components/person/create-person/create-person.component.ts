@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {PersonService} from "../../services/person.service";
+import {PersonService} from "../../../services/person.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 const url = "/"
@@ -33,22 +33,8 @@ export class CreatePersonComponent implements OnInit {
     this.personService.save(person).subscribe((r) => {
       console.log(r)
       this.router.navigateByUrl(url)
-      this.notify1()
-      this.notify2()
+      this.personService.notify1()
+      this.personService.notify2()
     })
-  }
-
-  notify1() {
-    setTimeout(() => {
-      // @ts-ignore
-      document.getElementById("alo").innerHTML = "Create successful!"
-    }, 0)
-  }
-
-  notify2() {
-    setTimeout(() => {
-      // @ts-ignore
-      document.getElementById("alo").innerHTML = " "
-    }, 2000)
   }
 }

@@ -8,17 +8,17 @@
     </tr>
     <tr>
       <td>Name:</td>
-      <td><input type="text" formControlName="name"></td>
+      <td><input type="text" formControlName="name" value='{{book?.name}}'></td>
     </tr>
     <tr>
       <td>Price:</td>
-      <td><input type="text" formControlName="price"></td>
+      <td><input type="text" formControlName="price" value='{{book?.price}}'></td>
     </tr>
     <tr>
       <td>
-        <select formControlName="author_id">
-          <option disabled>Selected</option>
-          <option *ngFor="let a of author" value="{{a.id}}">{{a.name}}
+        <select formControlName="author123">
+          <option >{{book?.author?.name}} </option>
+          <option *ngFor="let a of author" value="{{a.id}}">{{a.name}}</option>
         </select>
       </td>
     </tr>

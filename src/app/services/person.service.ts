@@ -36,7 +36,7 @@ export class PersonService {
   notify1() {
     setTimeout(() => {
       // @ts-ignore
-      document.getElementById("alo").innerHTML = "Create successful!"
+      document.getElementById("alo").innerHTML = "Successful!"
     }, 0)
   }
 

@@ -28,7 +28,7 @@ export class BookService {
   }
 
   update(id: string, book: Book): Observable<Book> {
-    return this.httpClient.put<Person>(API_URL + `/${id}`, book)
+    return this.httpClient.put<Book>(API_URL + `/${id}`, book)
   }
 
   delete(id: any): Observable<Book> {

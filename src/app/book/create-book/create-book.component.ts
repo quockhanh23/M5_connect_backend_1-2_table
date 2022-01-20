@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {BookService} from "../../../services/book.service";
-import {Author} from "../../../models/author";
-import {AuthorService} from "../../../services/author.service";
-import {PersonService} from "../../../services/person.service";
+import {BookService} from "../../services/book.service";
+import {Author} from "../../models/author";
+import {AuthorService} from "../../services/author.service";
+import {PersonService} from "../../services/person.service";
 
 @Component({
   selector: 'app-create-book',

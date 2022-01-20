@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {BookService} from "../../../services/book.service";
-import {AuthorService} from "../../../services/author.service";
-import {Author} from "../../../models/author";
-import {Book} from "../../../models/book";
-import {PersonService} from "../../../services/person.service";
+import {BookService} from "../../services/book.service";
+import {AuthorService} from "../../services/author.service";
+import {Author} from "../../models/author";
+import {Book} from "../../models/book";
+import {PersonService} from "../../services/person.service";
 
 @Component({
   selector: 'app-edit-book',

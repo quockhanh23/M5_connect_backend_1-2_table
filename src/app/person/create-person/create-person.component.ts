@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {PersonService} from "../../../services/person.service";
+import {PersonService} from "../../services/person.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 const url = "/"

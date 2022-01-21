@@ -20,6 +20,7 @@ import {BookModule} from "./book/book.module";
   ],
   providers: [],
   bootstrap: [AppComponent],
+
   exports: [
     PersonModule,
     BookModule

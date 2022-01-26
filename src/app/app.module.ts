@@ -6,10 +6,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {PersonModule} from "./person/person.module";
 import {BookModule} from "./book/book.module";
+import { NotfoundComponent } from './notfound/notfound.component';
+import {TestModule} from "./test/test.module";
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotfoundComponent,
 
   ],
   imports: [
@@ -22,8 +25,9 @@ import {BookModule} from "./book/book.module";
   bootstrap: [AppComponent],
 
   exports: [
-    PersonModule,
-    BookModule
+    // BookModule,
+    // PersonModule,
+    // TestModule,
   ]
 
 })

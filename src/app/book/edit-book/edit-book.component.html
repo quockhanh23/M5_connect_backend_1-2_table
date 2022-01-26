@@ -1,4 +1,4 @@
-<h2 style="color: #0a70b9">Edit form</h2>
+<h2 style="color: #0a70b9">Edit book</h2>
 <form [formGroup]="bookForm" (ngSubmit)="updateBook()">
   <table>
     <tr>
@@ -25,6 +25,9 @@
   <div class="row">
     <div class="col-6">
       <button style="color: #0a70b9" class="btn-warning btn">Edit</button>
+    </div>
+    <div class="col-6">
+      <button (click)="deleteBook1(bookForm.value.id)" style="color: #0a70b9" class="btn-warning btn">Delete</button>
     </div>
   </div>
 </form>

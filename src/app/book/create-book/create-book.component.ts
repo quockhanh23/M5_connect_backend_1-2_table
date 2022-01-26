@@ -37,7 +37,7 @@ export class CreateBookComponent implements OnInit {
   }
 
   submit() {
-    const book = {
+    let book = {
       name: this.bookForm.value.name,
       price: this.bookForm.value.price,
       author: {

@@ -18,6 +18,13 @@ export class PersonService {
     return this.httpClient.get<Person[]>(API_URL)
   }
 
+  searchByName(name:string): Observable<Person[]> {
+    return this.httpClient.get<Person[]>(API_URL + `/searchName?name=${name}`)
+  }
+  orderByASC(): Observable<Person[]> {
+    return this.httpClient.get<Person[]>(API_URL + `/orderByASC`)
+  }
+
   getById(id: any): Observable<Person> {
     return this.httpClient.get<Person>(API_URL + `/${id}`)
   }
@@ -33,6 +40,7 @@ export class PersonService {
   save(person: Person): Observable<Person> {
     return this.httpClient.post<Person>(API_URL, person)
   }
+
   notify1() {
     setTimeout(() => {
       // @ts-ignore

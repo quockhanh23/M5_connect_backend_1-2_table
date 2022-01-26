@@ -34,4 +34,24 @@ export class ListPersonComponent implements OnInit {
       })
     }
   }
+
+  searchByName() {
+    // @ts-ignore
+    let name = document.getElementById('search').value
+    console.log(name)
+    // @ts-ignore
+    this.personService.searchByName(name).subscribe(res => {
+      this.people = res
+      console.log(res)
+    }, error => {
+      console.log(error)
+    })
+  }
+
+  orderByASC() {
+    this.personService.orderByASC().subscribe(res => {
+      console.log(res)
+      this.people = res
+    })
+  }
 }

@@ -69,4 +69,15 @@ export class EditBookComponent implements OnInit {
       this.personService.notify2()
     })
   }
+
+  deleteBook1(id: any) {
+    this.bookService.delete(id).subscribe(() => {
+      this.router.navigate(["/book/list"]);
+      // @ts-ignore
+      this.personService.notify1()
+      this.personService.notify2()
+
+    })
+
+  }
 }

@@ -6,13 +6,13 @@ import {EditPersonComponent} from "./edit-person/edit-person.component";
 
 const routes: Routes = [
   {
+    path: 'list', component: ListPersonComponent
+  },
+  {
     path: 'create', component: CreatePersonComponent
   },
   {
     path: 'edit/:id', component: EditPersonComponent
-  },
-  {
-    path: 'list', component: ListPersonComponent
   },
 ];
 

@@ -20,7 +20,7 @@ export class EditBookComponent implements OnInit {
     name: new FormControl(''),
     price: new FormControl(''),
     author: new FormControl(''),
-  });
+    });
 
   constructor(private router: Router,
               private fb: FormBuilder,
@@ -35,8 +35,8 @@ export class EditBookComponent implements OnInit {
       this.author = rs
       console.log(rs)
     });
-    this.activatedRoute.paramMap.subscribe(paramap => {
-      const id = paramap.get('id')
+    this.activatedRoute.paramMap.subscribe(paraMap => {
+      const id = paraMap.get('id')
       console.log(id);
       // @ts-ignore
       this.bookService.getById(id).subscribe(result => {
@@ -64,7 +64,7 @@ export class EditBookComponent implements OnInit {
     console.log(book);
     // @ts-ignore
     this.bookService.update(this.bookForm.value.id, book).subscribe(() => {
-      this.router.navigate(["/book/list"]);
+      this.router.navigate(["/book/list"]).then();
       this.personService.notify1()
       this.personService.notify2()
     })
@@ -72,7 +72,7 @@ export class EditBookComponent implements OnInit {
 
   deleteBook1(id: any) {
     this.bookService.delete(id).subscribe(() => {
-      this.router.navigate(["/book/list"]);
+      this.router.navigate(["/book/list"]).then();
       // @ts-ignore
       this.personService.notify1()
       this.personService.notify2()

@@ -32,7 +32,7 @@ export class CreatePersonComponent implements OnInit {
     // @ts-ignore
     this.personService.save(person).subscribe((r) => {
       console.log(r)
-      this.router.navigateByUrl(url)
+      this.router.navigateByUrl(url).then()
       this.personService.notify1()
       this.personService.notify2()
     })

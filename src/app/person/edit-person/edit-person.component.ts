@@ -74,7 +74,7 @@ export class EditPersonComponent implements OnInit {
 
   delete(): void {
     this.personService.delete(this.person.id).subscribe(() => {
-      this.router.navigateByUrl(url)
+      this.router.navigateByUrl(url).then()
       this.personService.notify1()
       this.personService.notify2()
     })

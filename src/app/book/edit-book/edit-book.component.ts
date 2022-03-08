@@ -6,6 +6,8 @@ import {AuthorService} from "../../services/author.service";
 import {Author} from "../../models/author";
 import {Book} from "../../models/book";
 import {PersonService} from "../../services/person.service";
+import {iif} from "rxjs";
+
 
 @Component({
   selector: 'app-edit-book',
@@ -20,7 +22,7 @@ export class EditBookComponent implements OnInit {
     name: new FormControl(''),
     price: new FormControl(''),
     author: new FormControl(''),
-    });
+  });
 
   constructor(private router: Router,
               private fb: FormBuilder,
@@ -48,7 +50,7 @@ export class EditBookComponent implements OnInit {
         });
         console.log(result)
       }, error => {
-        console.log(error);
+        console.log("Lỗi: " + error)
       })
     })
   }
@@ -64,19 +66,24 @@ export class EditBookComponent implements OnInit {
     console.log(book);
     // @ts-ignore
     this.bookService.update(this.bookForm.value.id, book).subscribe(() => {
-      this.router.navigate(["/book/list"]).then();
+      console.log("In come to next")
+      this.router.navigate(["/book/list"]).then(console.log);
       this.personService.notify1()
       this.personService.notify2()
+      console.log("Ending next")
+    }, error => {
+      console.log("Lỗi: " + error)
     })
   }
 
   deleteBook1(id: any) {
     this.bookService.delete(id).subscribe(() => {
-      this.router.navigate(["/book/list"]).then();
+      this.router.navigate(["/book/list"]).then(console.log);
       // @ts-ignore
       this.personService.notify1()
       this.personService.notify2()
-
+    }, error => {
+      console.log("Lỗi: " + error)
     })
 
   }

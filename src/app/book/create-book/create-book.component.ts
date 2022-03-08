@@ -33,6 +33,8 @@ export class CreateBookComponent implements OnInit {
     this.authorService.getAll().subscribe(rs => {
       this.author = rs
       console.log(rs)
+    }, error => {
+      console.log(error)
     });
   }
 
@@ -45,9 +47,11 @@ export class CreateBookComponent implements OnInit {
       }
     }
     this.bookService.save(book).subscribe(() => {
-      this.router.navigate(["/book/list"]).then();
+      this.router.navigate(["/book/list"]).then(console.log);
       this.personService.notify1()
       this.personService.notify2()
+    }, error => {
+      console.log(error)
     })
   }
 }

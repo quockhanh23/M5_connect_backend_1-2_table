@@ -19,7 +19,7 @@ export class PersonService {
   }
 
   searchByName(name:string): Observable<Person[]> {
-    return this.httpClient.get<Person[]>(API_URL + `/searchName?name=${name}`)
+    return this.httpClient.get<Person[]>(API_URL + `/searchName?name=${name}`).pipe()
   }
   orderByASC(): Observable<Person[]> {
     return this.httpClient.get<Person[]>(API_URL + `/orderByASC`)

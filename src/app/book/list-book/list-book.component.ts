@@ -25,6 +25,7 @@ export class ListBookComponent implements OnInit {
       console.log(error)
     })
   }
+
   deleteBook(id: any) {
     if (confirm("Really want delete?")) {
       this.bookService.delete(id).subscribe(() => {
@@ -32,6 +33,8 @@ export class ListBookComponent implements OnInit {
         // @ts-ignore
         document.getElementById("alo").innerHTML = "Delete successful!"
         this.personService.notify2()
+      }, error => {
+        console.log(error)
       })
     }
   }
